@@ -1,0 +1,112 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-05-04T04:19:23.077Z",
+    "end": "2019-05-04T04:19:50.036Z",
+    "duration": 26959,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "e0d75ea3-8588-47fc-80ed-8efc29c2f16c",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "3a4fe02f-2bae-482a-8e60-3fb0f0fd8eae",
+        "title": "@Login@",
+        "fullFile": "/Users/nvelayutham/git/test/functional/spec/login.test.js",
+        "file": "/test/functional/spec/login.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "@Login@ \"before all\" hook",
+            "timedOut": false,
+            "duration": 1686,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "return createNemo()\n  .then(bindNemo.bind(this));",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6068ea49-a93c-4761-b698-ba55f0caeb2d",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook: destroyNemo",
+            "fullTitle": "@Login@ \"after all\" hook: destroyNemo",
+            "timedOut": false,
+            "duration": 53,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "log('destroyNemo: called');\nif (this.nemo) {\n  return this.nemo && this.nemo.driver && this.nemo.driver.quit()\n    .then(function () {\n      log('destroyNemo: Quit driver');\n      return Promise.resolve();\n    });\n}",
+            "err": {},
+            "isRoot": false,
+            "uuid": "dda051da-132d-449c-9850-3faf206652a0",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should load a website",
+            "fullTitle": "@Login@ should load a website",
+            "timedOut": false,
+            "duration": 25211,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "context": "[\n  \"should load a website.1.png\",\n  \"should load a website.2.png\",\n  \"should load a website.3.png\",\n  \"should load a website.4.png\",\n  \"should load a website.5.png\",\n  \"should load a website.6.png\",\n  \"should load a website.7.png\",\n  \"should load a website.8.png\",\n  \"should load a website.9.png\"\n]",
+            "code": "let nemo = this.nemo;\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    await nemo.snap();\n    await nemo.waitSeconds;\n    // Click on the login button from header\n    await nemo.view._present('#ul-btn');\n    await nemo.view._find('#ul-btn').click();\n    await nemo.snap();\n    // Enter email address\n    await nemo.view._present('#email');\n    await nemo.view._find('#email').sendKeys('consumerexptest010@paypal.com');\n    await nemo.view._find('#btnNext').click();\n    // Wait for the spinner\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.snap();\n    // Enter password\n    await nemo.view._present('#password');\n    await nemo.view._find('#password').sendKeys('3x@gj5wkl6!ac');\n    await nemo.view._find('#btnLogin').click();\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    // Pass through extra security\n    //await nemo.view._present('[class=scTrack:not-now notNowClientCal]');\n    //await nemo.view._find('[class=scTrack:not-now notNowClientCal]').click();\n    // Check if the main content section is available\n    await nemo.view._present('#contents');\n    await nemo.snap();\n    // Assert if the logged in name is correct",
+            "err": {},
+            "isRoot": false,
+            "uuid": "ddd3a14b-de4e-49b6-950f-027471e85366",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "ddd3a14b-de4e-49b6-950f-027471e85366"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 25211,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 180000
+  },
+  "copyrightYear": 2019
+}

@@ -1,0 +1,19 @@
+{
+  "login": {
+    "_model": "object",
+    "email": {
+      "_model": "input",
+      "type": "id",
+      "locator": "email"
+    },
+    "password": {
+      "_model": "input",
+      "type": "id",
+      "locator": "password"
+    },
+    "button": {
+      "type": "id",
+      "locator": "btnLogin"
+    }
+  }
+}

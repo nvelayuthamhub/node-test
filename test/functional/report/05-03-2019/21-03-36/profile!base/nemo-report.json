@@ -1,0 +1,113 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-05-04T04:03:36.430Z",
+    "end": "2019-05-04T04:03:36.457Z",
+    "duration": 27,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "dc30aabb-6513-4204-bbe1-eaa3844d8fae",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "c0b324ee-43d1-4699-ade4-04406fabf6a0",
+        "title": "@Login@",
+        "fullFile": "/Users/nvelayutham/git/test/functional/spec/login.test.js",
+        "file": "/test/functional/spec/login.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "@Login@ \"before all\" hook",
+            "timedOut": false,
+            "duration": 20,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "return createNemo()\n  .then(bindNemo.bind(this));",
+            "err": {
+              "message": "TypeError: Target browser must be a string, but is <undefined>; did you forget to call forBrowser()?",
+              "estack": "TypeError: Target browser must be a string, but is <undefined>; did you forget to call forBrowser()?\n    at Builder.build (node_modules/selenium-webdriver/index.js:575:13)\n    at Object.doSetup [as setup] (node_modules/nemo-core/lib/driver.js:123:28)\n    at driversetup (node_modules/nemo-core/lib/setup.js:55:16)\n    at nextTask (node_modules/async/dist/async.js:5324:14)\n    at next (node_modules/async/dist/async.js:5331:9)\n    at node_modules/async/dist/async.js:969:16\n    at setWebdriver (node_modules/nemo-core/lib/setup.js:29:9)\n    at nextTask (node_modules/async/dist/async.js:5324:14)\n    at Object.waterfall (node_modules/async/dist/async.js:5334:5)\n    at node_modules/nemo-core/lib/setup.js:37:13"
+            },
+            "isRoot": false,
+            "uuid": "e65dec40-1112-495e-a079-77b85d4caccf",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook: destroyNemo",
+            "fullTitle": "@Login@ \"after all\" hook: destroyNemo",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "log('destroyNemo: called');\nif (this.nemo) {\n  return this.nemo && this.nemo.driver && this.nemo.driver.quit()\n    .then(function () {\n      log('destroyNemo: Quit driver');\n      return Promise.resolve();\n    });\n}",
+            "err": {},
+            "isRoot": false,
+            "uuid": "c5a9f591-62ad-42f9-8717-bd7d391789b6",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should load a website",
+            "fullTitle": "@Login@ should load a website",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "let nemo = this.nemo;\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    await nemo.snap();\n    await nemo.waitSeconds;\n    // Click on the login button from header\n    await nemo.view._present('#ul-btn');\n    await nemo.view._find('#ul-btn').click();\n    await nemo.snap();\n    // Enter email address\n    await nemo.view._present('#email');\n    await nemo.view._find('#email').sendKeys('consumerexptest010@paypal.com');\n    await nemo.view._find('#btnNext').click();\n    // Wait for the spinner\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.snap();\n    // Enter password\n    await nemo.view._present('#password');\n    await nemo.view._find('#password').sendKeys('3x@gj5wkl6!ac');\n    await nemo.view._find('#btnLogin').click();\n    await nemo.snap();\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    // Pass through extra security\n    //await nemo.view._present('[class=scTrack:not-now notNowClientCal]');\n    //await nemo.view._find('[class=scTrack:not-now notNowClientCal]').click();\n    // Check if the main content section is available\n    await nemo.view._present('#contents');\n    await nemo.snap();\n    // Assert if the logged in name is correct",
+            "err": {},
+            "isRoot": false,
+            "uuid": "f6d277ef-2572-45b5-b4c7-aa780001cc65",
+            "isHook": false,
+            "skipped": true
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [
+          "f6d277ef-2572-45b5-b4c7-aa780001cc65"
+        ],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 180000
+  },
+  "copyrightYear": 2019
+}

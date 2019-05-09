@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2019-05-04T03:58:53.800Z",
+    "end": "2019-05-04T03:59:08.500Z",
+    "duration": 14700,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "ec7df79a-b3ef-4880-8e01-b4673e9e090d",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "f3e6aee5-6f96-4ef9-99cc-a31ea6c559cf",
+        "title": "@Login@",
+        "fullFile": "/Users/nvelayutham/git/test/functional/spec/login.test.js",
+        "file": "/test/functional/spec/login.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "@Login@ \"before all\" hook",
+            "timedOut": false,
+            "duration": 1497,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "return createNemo()\n  .then(bindNemo.bind(this));",
+            "err": {},
+            "isRoot": false,
+            "uuid": "73b7b94f-ad53-4167-bea8-435d10be5524",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook: destroyNemo",
+            "fullTitle": "@Login@ \"after all\" hook: destroyNemo",
+            "timedOut": false,
+            "duration": 55,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "log('destroyNemo: called');\nif (this.nemo) {\n  return this.nemo && this.nemo.driver && this.nemo.driver.quit()\n    .then(function () {\n      log('destroyNemo: Quit driver');\n      return Promise.resolve();\n    });\n}",
+            "err": {},
+            "isRoot": false,
+            "uuid": "835fece0-597f-497d-a59a-623271267aeb",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should load a website",
+            "fullTitle": "@Login@ should load a website",
+            "timedOut": false,
+            "duration": 13136,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "context": "[\n  \"should load a website.1.png\",\n  \"should load a website.2.png\",\n  \"should load a website.3.png\",\n  \"should load a website.4.png\",\n  \"should load a website.5.png\"\n]",
+            "code": "let nemo = this.nemo;\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    await nemo.snap();\n    await nemo.waitSeconds;\n    // Click on the login button from header\n    await nemo.view._present('#ul-btn');\n    await nemo.view._find('#ul-btn').click();\n    await nemo.snap();\n    // Enter email address\n    await nemo.view._present('#email');\n    await nemo.view._find('#email').sendKeys('consumerexptest010@paypal.com');\n    await nemo.view._find('#btnNext').click();\n    // Wait for the spinner\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.snap();\n    // Enter password\n    await nemo.view._present('#password');\n    await nemo.view._find('#password').sendKeys('3x@gj5wkl6!ac');\n    await nemo.view._find('#btnLogin').click();\n    await nemo.snap();\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    // Pass through extra security\n    //await nemo.view._present('[class=scTrack:not-now notNowClientCal]');\n    //await nemo.view._find('[class=scTrack:not-now notNowClientCal]').click();\n    // Check if the main content section is available\n    await nemo.view._present('#contents');\n    await nemo.snap();\n    // Assert if the logged in name is correct",
+            "err": {
+              "message": "WebDriverError: element not interactable\n  (Session info: chrome=73.0.3683.75)\n  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Mac OS X 10.14.4 x86_64)",
+              "estack": "WebDriverError: element not interactable\n  (Session info: chrome=73.0.3683.75)\n  (Driver info: chromedriver=73.0.3683.68 (47787ec04b6e38e22703e856e101e840b65afe72),platform=Mac OS X 10.14.4 x86_64)\n    at Object.checkLegacyResponse (node_modules/selenium-webdriver/lib/error.js:546:15)\n    at parseHttpResponse (node_modules/selenium-webdriver/lib/http.js:509:13)\n    at doSend.then.response (node_modules/selenium-webdriver/lib/http.js:441:30)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\nFrom: Task: WebElement.sendKeys()\n    at thenableWebDriverProxy.schedule (node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at WebElementPromise.schedule_ (node_modules/selenium-webdriver/lib/webdriver.js:2010:25)\n    at WebElementPromise.sendKeys (node_modules/selenium-webdriver/lib/webdriver.js:2174:19)\n    at Context.<anonymous> (test/functional/spec/login.test.js:34:40)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"
+            },
+            "isRoot": false,
+            "uuid": "3d60d475-4bcd-4c3f-949d-1b2338d58092",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "3d60d475-4bcd-4c3f-949d-1b2338d58092"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 13136,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 180000
+  },
+  "copyrightYear": 2019
+}

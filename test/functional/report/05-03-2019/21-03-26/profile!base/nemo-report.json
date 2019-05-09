@@ -1,0 +1,113 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-05-04T04:03:27.268Z",
+    "end": "2019-05-04T04:03:27.325Z",
+    "duration": 57,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "bb867991-053a-4d18-9e3e-1bd90d636b8a",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "ad4f7e3f-8f50-412a-9314-4409ea1a0a65",
+        "title": "@Login@",
+        "fullFile": "/Users/nvelayutham/git/test/functional/spec/login.test.js",
+        "file": "/test/functional/spec/login.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "@Login@ \"before all\" hook",
+            "timedOut": false,
+            "duration": 41,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "return createNemo()\n  .then(bindNemo.bind(this));",
+            "err": {
+              "message": "Error: The geckodriver executable could not be found on the current PATH. Please download the latest version from https://github.com/mozilla/geckodriver/releases/ and ensure it can be found on your PATH.",
+              "estack": "Error: The geckodriver executable could not be found on the current PATH. Please download the latest version from https://github.com/mozilla/geckodriver/releases/ and ensure it can be found on your PATH.\n    at findGeckoDriver (node_modules/selenium-webdriver/firefox/index.js:354:11)\n    at new ServiceBuilder (node_modules/selenium-webdriver/firefox/index.js:446:22)\n    at Function.createSession (node_modules/selenium-webdriver/firefox/index.js:516:21)\n    at createDriver (node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (node_modules/selenium-webdriver/index.js:645:16)\n    at Object.doSetup [as setup] (node_modules/nemo-core/lib/driver.js:123:28)\n    at driversetup (node_modules/nemo-core/lib/setup.js:55:16)\n    at nextTask (node_modules/async/dist/async.js:5324:14)\n    at next (node_modules/async/dist/async.js:5331:9)\n    at node_modules/async/dist/async.js:969:16"
+            },
+            "isRoot": false,
+            "uuid": "d2d44a8d-bfc2-4e4b-8afc-56cce4001df6",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook: destroyNemo",
+            "fullTitle": "@Login@ \"after all\" hook: destroyNemo",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "log('destroyNemo: called');\nif (this.nemo) {\n  return this.nemo && this.nemo.driver && this.nemo.driver.quit()\n    .then(function () {\n      log('destroyNemo: Quit driver');\n      return Promise.resolve();\n    });\n}",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a48301b0-19c2-4c14-925a-c226a1b361e6",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "should load a website",
+            "fullTitle": "@Login@ should load a website",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "let nemo = this.nemo;\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    await nemo.snap();\n    await nemo.waitSeconds;\n    // Click on the login button from header\n    await nemo.view._present('#ul-btn');\n    await nemo.view._find('#ul-btn').click();\n    await nemo.snap();\n    // Enter email address\n    await nemo.view._present('#email');\n    await nemo.view._find('#email').sendKeys('consumerexptest010@paypal.com');\n    await nemo.view._find('#btnNext').click();\n    // Wait for the spinner\n    await nemo.snap();\n    await nemo.snap();\n    await nemo.snap();\n    // Enter password\n    await nemo.view._present('#password');\n    await nemo.view._find('#password').sendKeys('3x@gj5wkl6!ac');\n    await nemo.view._find('#btnLogin').click();\n    await nemo.snap();\n    await nemo.driver.get(nemo.data.paypalHomeUrl);\n    // Pass through extra security\n    //await nemo.view._present('[class=scTrack:not-now notNowClientCal]');\n    //await nemo.view._find('[class=scTrack:not-now notNowClientCal]').click();\n    // Check if the main content section is available\n    await nemo.view._present('#contents');\n    await nemo.snap();\n    // Assert if the logged in name is correct",
+            "err": {},
+            "isRoot": false,
+            "uuid": "38c4e4c9-0471-4f29-920e-25fd3c19fe3e",
+            "isHook": false,
+            "skipped": true
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [
+          "38c4e4c9-0471-4f29-920e-25fd3c19fe3e"
+        ],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 180000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 180000
+  },
+  "copyrightYear": 2019
+}

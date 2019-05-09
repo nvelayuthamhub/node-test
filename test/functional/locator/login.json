@@ -1,0 +1,23 @@
+{
+/*  "signinBtn": {
+    "type": "css",
+    "locator": "btn btn-small btn-secondary"
+  },
+  "email": {
+    "type": "id",
+    "locator": "email"
+  },
+  "password": {
+    "type": "id",
+    "locator": "password"
+  },
+  "button": {
+    "type": "id",
+    "locator": "btnLogin"
+  },*/
+
+  "singinBtn" : "[id=ul-btn]",
+  "email": "[id=email]",
+  "password": "[id=password]",
+  "signinSubmitButton": "[id=btnLogin]"
+}
